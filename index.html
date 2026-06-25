@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>石垣島家族旅行 — 2026.07.07–07.11</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap');
+
+  :root{
+    --deep-sea:#0b3d4c;
+    --lagoon:#1c7a8c;
+    --shallow:#4fb3bf;
+    --foam:#eaf6f3;
+    --sand:#f6efe1;
+    --sand-deep:#e8dcc0;
+    --coral:#e8754a;
+    --coral-deep:#c85a32;
+    --sunset:#f0a857;
+    --ink:#163234;
+    --ink-soft:#3f5c5e;
+    --paper:#fdfbf5;
+    --line:rgba(11,61,76,0.14);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  body{
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'Noto Sans TC', sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:980px; margin:0 auto; padding:0 28px;}
+
+  .hero{
+    position:relative;
+    background-color:#0b3d4c;
+    color:var(--foam);
+    padding:88px 0 70px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle at 12% 25%, rgba(255,255,255,0.10) 0, transparent 38%),
+      radial-gradient(circle at 85% 70%, rgba(255,255,255,0.08) 0, transparent 42%);
+    pointer-events:none;
+  }
+  .hero-wave{ position:absolute; bottom:-2px; left:0; width:100%; line-height:0; }
+  .hero-inner{position:relative; z-index:2;}
+  .eyebrow{
+    font-size:13px; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--sunset); font-weight:600; margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:'Noto Serif TC', serif;
+    font-weight:700;
+    font-size:clamp(34px, 5.2vw, 56px);
+    line-height:1.25;
+    margin-bottom:16px;
+    letter-spacing:0.01em;
+  }
+  .hero h1 .accent{ color:var(--sunset); font-style:italic; font-family:'Cormorant Garamond', serif; font-weight:600;}
+  .hero-sub{ font-size:16px; color:rgba(234,246,243,0.82); max-width:560px; margin-bottom:36px; }
+  .hero-meta{ display:flex; flex-wrap:wrap; gap:14px; }
+  .meta-chip{
+    background:rgba(255,255,255,0.10);
+    border:1px solid rgba(255,255,255,0.22);
+    backdrop-filter:blur(6px);
+    border-radius:30px;
+    padding:10px 20px;
+    font-size:13.5px;
+    display:flex; align-items:center; gap:8px;
+    color:var(--foam);
+  }
+  .meta-chip b{font-weight:600; color:#fff;}
+  .meta-dot{width:5px; height:5px; border-radius:50%; background:var(--sunset);}
+
+  .info-strip{ background:var(--paper); border-bottom:1px solid var(--line); }
+  .info-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:0; }
+  .info-cell{ padding:26px 22px; border-right:1px solid var(--line); }
+  .info-cell:last-child{border-right:none;}
+  .info-cell .label{
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--coral-deep); font-weight:600; margin-bottom:8px;
+  }
+  .info-cell .value{font-size:15px; color:var(--ink); font-weight:500;}
+  .info-cell .value small{display:block; font-weight:400; color:var(--ink-soft); font-size:13px; margin-top:2px;}
+
+  .section{padding:54px 0 8px;}
+  .section-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:18px; }
+  .day-num{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic; font-size:52px; color:var(--shallow); line-height:1; font-weight:600;
+  }
+  .day-title-block h2{
+    font-family:'Noto Serif TC', serif; font-size:24px; font-weight:600; color:var(--deep-sea); margin-bottom:4px;
+  }
+  .day-title-block .day-date{ font-size:13px; color:var(--ink-soft); letter-spacing:0.04em; }
+  .day-tag{
+    margin-left:auto; font-size:12px; background:var(--foam); color:var(--lagoon);
+    border:1px solid rgba(28,122,140,0.25); padding:6px 14px; border-radius:20px;
+    white-space:nowrap; font-weight:500;
+  }
+
+  .map-route-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--deep-sea); color:#fff; text-decoration:none;
+    font-size:13.5px; font-weight:500; padding:10px 20px;
+    border-radius:30px; margin-top:10px; margin-bottom:34px; transition:background 0.15s;
+  }
+  .map-route-btn:hover{ background:var(--lagoon); }
+  .map-route-btn svg{ width:15px; height:15px; flex-shrink:0; }
+
+  .timeline{ position:relative; padding-left:34px; border-left:2px solid var(--sand-deep); margin-left:8px; }
+  .tl-item{ position:relative; padding-bottom:26px; }
+  .tl-item:last-child{padding-bottom:6px;}
+  .tl-item::before{
+    content:""; position:absolute; left:-41px; top:4px; width:12px; height:12px; border-radius:50%;
+    background:var(--paper); border:2.5px solid var(--lagoon);
+  }
+  .tl-item.rest::before{ border-color:var(--coral); }
+  .tl-item.highlight::before{ border-color:var(--coral); background:var(--coral); }
+
+  .tl-time{ font-size:13px; font-weight:600; color:var(--lagoon); letter-spacing:0.03em; margin-bottom:6px; }
+  .tl-card{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:16px 20px; }
+  .tl-card.rest{ background:linear-gradient(135deg, #fdf3ec 0%, #fdfbf5 100%); border-color:rgba(232,117,74,0.28); }
+  .tl-card.meal{ background:linear-gradient(135deg, #fdf6ea 0%, #fdfbf5 100%); border-color:rgba(240,168,87,0.32); }
+  a.tl-card{
+    display:block; text-decoration:none; color:inherit; position:relative;
+    transition:border-color 0.15s, box-shadow 0.15s;
+  }
+  a.tl-card:hover{ border-color:var(--lagoon); box-shadow:0 2px 10px rgba(11,61,76,0.08); }
+  a.tl-card .tl-title::after{
+    content:"📍"; font-size:12px; margin-left:6px; opacity:0.55; text-decoration:none;
+  }
+  .tl-title{ font-size:16px; font-weight:600; color:var(--ink); margin-bottom:4px; display:flex; align-items:center; gap:8px; }
+  .tl-desc{font-size:13.5px; color:var(--ink-soft); margin-bottom:8px;}
+  .tl-note{
+    font-size:12.5px; color:var(--lagoon); background:rgba(28,122,140,0.07);
+    border-left:2px solid var(--lagoon); border-radius:0 8px 8px 0;
+    padding:7px 12px; margin-top:6px;
+  }
+  .tl-note b{ color:var(--deep-sea); font-weight:600; }
+  .tl-badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;}
+  .badge{ font-size:11px; padding:4px 10px; border-radius:20px; background:rgba(28,122,140,0.08); color:var(--lagoon); font-weight:500; }
+  .badge.kid{background:rgba(232,117,74,0.10); color:var(--coral-deep);}
+  .badge.warn{background:rgba(216,90,48,0.12); color:#a3431c;}
+
+  .nap-banner{
+    margin-left:-34px; margin-bottom:26px; background:var(--deep-sea); color:var(--foam);
+    border-radius:14px; padding:14px 22px; display:flex; align-items:center; gap:14px; font-size:13px;
+  }
+  .nap-banner .nap-icon{font-size:18px;}
+  .nap-banner b{color:var(--sunset); font-weight:600;}
+
+  .overview-section{ background-color:#0b3d4c; color:var(--foam); padding:60px 0 64px; margin-top:60px; }
+  .overview-section h2{ font-family:'Noto Serif TC', serif; font-size:26px; font-weight:600; margin-bottom:8px; }
+  .overview-section .sub{font-size:13.5px; color:rgba(234,246,243,0.65); margin-bottom:32px;}
+  .ov-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+  .ov-card{ background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:14px; padding:20px; }
+  .ov-card .ov-day{font-size:11px; letter-spacing:0.12em; color:var(--sunset); text-transform:uppercase; font-weight:600; margin-bottom:10px;}
+  .ov-card ul{list-style:none; padding:0; margin:0;}
+  .ov-card li{ font-size:12.5px; color:rgba(234,246,243,0.88); padding:5px 0 5px 14px; position:relative; border-bottom:1px solid rgba(255,255,255,0.08); }
+  .ov-card li:last-child{border-bottom:none;}
+  .ov-card li::before{ content:""; position:absolute; left:0; top:13px; width:4px; height:4px; border-radius:50%; background:var(--shallow); }
+
+  footer{ text-align:center; padding:34px 0 48px; font-size:12.5px; color:var(--ink-soft); background:var(--sand); }
+  footer .fname{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px; color:var(--lagoon); margin-bottom:6px; }
+
+  @media (max-width:760px){
+    .info-grid{grid-template-columns:1fr 1fr;}
+    .info-cell:nth-child(2){border-right:none;}
+    .info-cell{border-bottom:1px solid var(--line);}
+    .ov-grid{grid-template-columns:1fr 1fr;}
+    .notes-grid{grid-template-columns:1fr;}
+    .hero{padding:64px 0 50px;}
+    .nap-banner{margin-left:-20px;}
+  }
+  @media (max-width:520px){
+    .ov-grid{grid-template-columns:1fr;}
+    .wrap{padding:0 18px;}
+  }
+
+  .section{ page-break-before:always; break-before:page; }
+  .section:first-of-type{ page-break-before:auto; break-before:auto; }
+  .overview-section{ page-break-before:always; break-before:page; }
+  .tl-item, .tl-card, .birthday-box{ page-break-inside:avoid; break-inside:avoid; }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Family Trip Itinerary</div>
+    <h1>石垣島　<span class="accent">Ishigaki</span><br>家族慢旅行程表</h1>
+    <p class="hero-sub">六大兩小・含長輩與幼童的步調，四天三夜，全程入住 ANA InterContinental Ishigaki Resort。每天附上實際地圖與路線，每個景點都標註選擇的考量。</p>
+    <div class="hero-meta">
+      <div class="meta-chip"><span class="meta-dot"></span>2026.07.07（二）— 07.11（六）</div>
+      <div class="meta-chip"><span class="meta-dot"></span>6 大　2 小　含長輩同行</div>
+      <div class="meta-chip"><span class="meta-dot"></span>ANA InterContinental Ishigaki Resort</div>
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block; width:100%; height:50px;">
+    <path d="M0,30 C240,60 480,0 720,20 C960,40 1200,10 1440,30 L1440,60 L0,60 Z" fill="#f6efe1"/>
+  </svg>
+</section>
+
+<section class="info-strip">
+  <div class="wrap">
+    <div class="info-grid">
+      <div class="info-cell">
+        <div class="label">去程航班</div>
+        <div class="value">7/7（二）抵達<small>08:35 新石垣機場</small></div>
+      </div>
+      <div class="info-cell">
+        <div class="label">回程航班</div>
+        <div class="value">7/11（六）起飛<small>09:25　請提早抵達機場</small></div>
+      </div>
+      <div class="info-cell">
+        <div class="label">租車時段</div>
+        <div class="value">7/7 09:00 取車<small>7/11 08:00 還車</small></div>
+      </div>
+      <div class="info-cell">
+        <div class="label">住宿</div>
+        <div class="value">ANA InterContinental<small>四晚連住・不換房</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 1 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="day-num">01</div>
+      <div class="day-title-block">
+        <h2>抵達日</h2>
+        <div class="day-date">7月7日（二）</div>
+      </div>
+      <div class="day-tag">公園 → 展望台 → 午餐 → Check-in</div>
+    </div>
+
+    <p class="map-note">📍 機場 → Banna Park → Southern Island Observation Deck → やえかつ → 牛乳屋さん → MaxValu Yaima → 飯店Check-in → 燒肉樹苑</p>
+    <a class="map-route-btn" href="https://www.google.com/maps/dir/%E6%96%B0%E7%9F%B3%E5%9E%A3%E7%A9%BA%E6%B8%AF/Banna+Park,+Ishigaki/Southern+Island+Observation+Deck,+Ishigaki/%E3%82%84%E3%81%88%E3%81%8B%E3%81%A4,+Ishigaki/Yaeyama+Genki+Nyugyo,+Ishigaki/MaxValu+Yaima,+Ishigaki/ANA+InterContinental+Ishigaki+Resort" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      在 Google 地圖開啟今日路線
+    </a>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">08:35</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=New+Ishigaki+Airport" target="_blank" rel="noopener">
+          <div class="tl-title">抵達新石垣機場</div>
+          <div class="tl-desc">出關、領行李，預估約 30–40 分鐘，接著機場取車。</div>
+        </a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">09:30–10:30</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=Banna+Park%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">Banna Park</div>
+          <div class="tl-desc">日本最南端的森林公園，有觀景台與大型遊樂設施。</div>
+          <div class="tl-note"><b>選擇考量：</b>飯店到市區路上順路，早上較涼爽，適合抵達當天讓小朋友先活動筋骨，不需走完全部五區，1小時走主要觀景台即可。</div>
+        </a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">10:40–11:10</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=Southern+Island+Observation+Deck%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">Southern Island Observation Deck</div>
+          <div class="tl-desc">獨特造型的展望台，可俯瞰島嶼大半景觀，免費停車。</div>
+          <div class="tl-note"><b>選擇考量：</b>與Banna Park距離僅約1公里、緯度幾乎相同，動線完全順路；展望台造型特別好拍照，停留時間短，不會拖累行程。</div>
+        </a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">11:30–13:00</div>
+        <a class="tl-card meal" href="https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%81%88%E3%81%8B%E3%81%A4+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">🍽️ やえかつ（午餐）</div>
+          <div class="tl-desc">石垣島人氣炸豬排專門店，里肌與腰內肉炸得酥脆多汁，肉質嫩得像和牛。</div>
+          <div class="tl-note"><b>選擇考量：</b>評價4.5、全週無休11:00開始營業；位於市區公設市場旁，與當天動線完全吻合。</div>
+        </a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">13:30–14:15</div>
+        <a class="tl-card rest" href="https://www.google.com/maps/search/?api=1&query=Yaeyama+Genki+Nyugyo%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">🥛 石垣島の牛乳屋さん</div>
+          <div class="tl-desc">自家牧場鮮奶製作的奶昔、布丁、優格，店內有可愛乳牛裝飾與牛牛造型椅。</div>
+          <div class="tl-note"><b>選擇考量：</b>15:00才能check-in，這裡有冷氣可休息，當作入住前的緩衝點，小朋友喜歡店裡的牛牛裝飾。</div>
+        </a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">14:30–15:00</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=MaxValu+Yaima%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">MaxValu Yaima（超市）</div>
+          <div class="tl-desc">24小時營業大型超市，生鮮、零食、日用品一次買齊。</div>
+          <div class="tl-note"><b>選擇考量：</b>採買飯店期間零食、水、防曬乳，安排在check-in前最後一站，買完直接帶進房間放，動線最順。</div>
+        </a>
+      </div>
+
+      <div class="tl-item rest">
+        <div class="tl-time">15:00</div>
+        <a class="tl-card rest" href="https://www.google.com/maps/search/?api=1&query=ANA+InterContinental+Ishigaki+Resort" target="_blank" rel="noopener">
+          <div class="tl-title">🛏️ ANA InterContinental Check-in</div>
+          <div class="tl-desc">正式入住，安頓行李。</div>
+        </a>
+      </div>
+
+      <div class="tl-item rest">
+        <div class="tl-time">15:30–18:30</div>
+        <a class="tl-card rest" href="https://www.google.com/maps/search/?api=1&query=ANA+InterContinental+Ishigaki+Resort" target="_blank" rel="noopener">
+          <div class="tl-title">🏖️ 飯店設施 ・ 自由活動</div>
+          <div class="tl-desc">游泳池、沙灘散步或房內休息，第一天不安排外出，留時間給家人放鬆。</div>
+          <div class="tl-note"><b>選擇考量：</b>Check-in、採買都結束後，讓大家有充裕時間整理行李、熟悉飯店環境，不用再趕行程。</div>
+        </a>
+      </div>
+
+      <div class="tl-item highlight">
+        <div class="tl-time">19:00 起</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=Yakiniku+Ushigaki%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">🍖 石垣島燒肉樹苑（晚餐）</div>
+          <div class="tl-desc">市區人氣燒肉店，肉質軟嫩、份量實在。</div>
+          <div class="tl-note"><b>選擇考量：</b>抵達第一天需要補充體力，燒肉份量足、可單點各取所需，適合長輩小孩同桌不挑食。</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 2 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="day-num">02</div>
+      <div class="day-title-block">
+        <h2>北部探索日</h2>
+        <div class="day-date">7月8日（三）</div>
+      </div>
+      <div class="day-tag">海灘 → 玻璃船 → 購物</div>
+    </div>
+
+    <p class="map-note">📍 Sukuji Beach → 川平灣玻璃船 → 三川食堂 → 飯店午休 → 公設市場 → Euglena Mall → THE NORTH FACE → Sora → 晚餐</p>
+    <a class="map-route-btn" href="https://www.google.com/maps/dir/ANA+InterContinental+Ishigaki+Resort/Sukuji+Beach,+Ishigaki/Kabira+Bay,+Ishigaki/Mikawa+Shokudo,+Ishigaki/ANA+InterContinental+Ishigaki+Resort/Ishigaki+City+Public+Market/Euglena+Mall,+Ishigaki" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      在 Google 地圖開啟今日路線
+    </a>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">09:00</div>
+        <div class="tl-card">
+          <div class="tl-title">飯店出發</div>
+          <div class="tl-desc">早餐後出發，往北部前進，車程約45分鐘。</div>
+        </div>
+      </div>
+
+      <div class="tl-item highlight">
+        <div class="tl-time">09:50–11:20</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=Sukuji+Beach%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">Sukuji Beach 戲水</div>
+          <div class="tl-desc">海浪平緩、淺灘範圍寬廣，是家庭與初學者的人氣海灘。</div>
+          <div class="tl-note"><b>選擇考量：</b>退潮時水位更淺，適合幼童戲水；有遮蔭樹木與淋浴設施。早上較涼爽，安排在玻璃船<u>之前</u>，把較曬的時段留給有遮頂的船。</div>
+          <div class="tl-badges"><span class="badge kid">幼童友善・有遮蔭</span></div>
+        </a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">11:30–12:15</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=Kabira+Bay%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">川平灣玻璃船</div>
+          <div class="tl-desc">米其林三星景點，全程約30分鐘，0歲起可參加，不需下水。</div>
+          <div class="tl-note"><b>選擇考量：</b>現場購票即可，每15分鐘一班不需預約。建議選有冷氣的Blue Coral船班，夏天較舒適。船票：大人約¥1,300-1,700、小孩約¥650-800。</div>
+          <div class="tl-badges"><span class="badge kid">全齡友善・免下水</span></div>
+        </a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">12:30–13:30</div>
+        <a class="tl-card meal" href="https://www.google.com/maps/search/?api=1&query=Mikawa+Shokudo%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">🍽️ 三川食堂（午餐）</div>
+          <div class="tl-desc">在地人氣食堂，炸魚定食、套餐選擇多。</div>
+          <div class="tl-note"><b>選擇考量：</b>位置剛好在川平灣回飯店的路上，不需繞路。備用選項：公園茶屋（川平灣旁，1961年老字號八重山蕎麥麵）。</div>
+        </a>
+      </div>
+
+      <div class="nap-banner">
+        <span class="nap-icon">😴</span>
+        <div><b>午休時段 13:45–15:30</b>　小朋友返回飯店房間補眠休息。</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">16:00–18:00</div>
+        <a class="tl-card" href="https://www.google.com/maps/dir/ANA+InterContinental+Ishigaki+Resort/Ishigaki+City+Public+Market/Euglena+Mall,+Ishigaki/THE+NORTH+FACE+Ishigaki/Sora+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">市區購物：公設市場 ＋ Euglena Mall ＋ THE NORTH FACE ＋ Sora</div>
+          <div class="tl-desc">公設市場逛伴手禮小吃，Euglena Mall 商店街，接著到 THE NORTH FACE 石垣（石垣限定商品）與樓上的 Sora（戶外品牌 select shop）。</div>
+          <div class="tl-note"><b>選擇考量：</b>四個地點都在市區同一帶，步行串連不需移車；THE NORTH FACE 與 Sora 同棟樓（1F＋2F），一次逛完。</div>
+        </a>
+      </div>
+
+      <div class="tl-item highlight">
+        <div class="tl-time">18:30 起</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=Ajimaa+Shoten%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">🍽️ 晚餐：あじまー商店 或 Eiko Seafood Izakaya</div>
+          <div class="tl-desc">兩個選項都在市區，沖繩家庭料理 / 道地海鮮居酒屋。</div>
+          <div class="tl-note"><b>選擇考量：</b>あじまー商店有英文菜單QR code，溝通較方便；Eiko Seafood Izakaya評價極高、魚貨新鮮，<span class="badge warn">⚠️ 建議提前訂位</span>（深受當地人喜愛，熱門時段容易客滿）。</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 3 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="day-num">03</div>
+      <div class="day-title-block">
+        <h2>西部海灘日</h2>
+        <div class="day-date">7月9日（四）</div>
+      </div>
+      <div class="day-tag">海灘 → 冰淇淋 → 午餐 → 泳池 → 🎂 烤肉慶生</div>
+    </div>
+
+    <p class="map-note">📍 富崎海灘 → MiruMiru本舗 → Kabusa食堂 → 飯店泳池 → 花園烤肉區</p>
+    <a class="map-route-btn" href="https://www.google.com/maps/dir/ANA+InterContinental+Ishigaki+Resort/Fusaki+Beach,+Ishigaki/Mirumiru+Honpo+Main+Store,+Ishigaki/Kabusa+Syokudo,+Ishigaki/ANA+InterContinental+Ishigaki+Resort" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      在 Google 地圖開啟今日路線
+    </a>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">09:30</div>
+        <div class="tl-card">
+          <div class="tl-title">飯店出發</div>
+          <div class="tl-desc">今天往西北方向，車程較短。</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">10:10–11:10</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=Fusaki+Beach%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">富崎海灘</div>
+          <div class="tl-desc">白色棧橋延伸入海，被稱為「天使碼頭」，沙質乾淨柔軟。</div>
+          <div class="tl-note"><b>選擇考量：</b>免費入場（穿過飯店即可進入），海水清澈、適合拍全家福，跟MiruMiru本舗距離很近、動線順。</div>
+        </a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">11:15–12:00</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=Mirumiru+Honpo+Main+Store%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">MiruMiru本舗</div>
+          <div class="tl-desc">自家牧場鮮奶製作的義式冰淇淋，可俯瞰名蔵灣海景。</div>
+          <div class="tl-note"><b>選擇考量：</b>位於高處露台，能邊吃冰淇淋邊賞海景，與富崎海灘距離僅1公里內，順路休息點。</div>
+        </a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">12:15–13:15</div>
+        <a class="tl-card meal" href="https://www.google.com/maps/search/?api=1&query=Kabusa+Syokudo%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">🍽️ Kabusa食堂（午餐）</div>
+          <div class="tl-desc">漁港附近食堂，使用當地漁獲製作定食，薑黃手打蕎麥麵是招牌。</div>
+          <div class="tl-note"><b>選擇考量：</b>位置剛好在回程路上、全週無公休（原本想去的Kunatsuyu週四公休，故改選此處），份量大、適合長輩的清淡口味。</div>
+        </a>
+      </div>
+
+      <div class="tl-item rest">
+        <div class="tl-time">13:30–17:30</div>
+        <a class="tl-card rest" href="https://www.google.com/maps/search/?api=1&query=ANA+InterContinental+Ishigaki+Resort" target="_blank" rel="noopener">
+          <div class="tl-title">🏊 花園烤肉區專屬泳池玩耍</div>
+          <div class="tl-desc">使用花園烤肉區的專屬泳池，晚餐前盡情戲水放鬆。</div>
+          <div class="tl-note"><b>選擇考量：</b>晚餐在同一區域，泳池玩耍完直接步行至烤肉區，不需換裝出門，動線最順。</div>
+        </a>
+      </div>
+
+      <div class="tl-item highlight">
+        <div class="tl-time">18:30</div>
+        <a class="tl-card" href="https://www.anaintercontinental-ishigaki.jp/zh-tw/offers/detail/?id=386" target="_blank" rel="noopener">
+          <div class="tl-title">🎂 花園烤肉區（生日晚餐）</div>
+          <div class="tl-desc">ANA InterContinental 飯店內戶外花園烤肉，融合石垣島食材的烤肉饗宴。</div>
+          <div class="tl-note"><b>選擇考量：</b>飯店內烤肉區，不需外出移動；有專屬泳池，小孩大人都開心，生日氣氛輕鬆歡樂。</div>
+        </a>
+      </div>
+    </div>
+</section>
+
+<!-- ============ DAY 4 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="day-num">04</div>
+      <div class="day-title-block">
+        <h2>東北景觀＋購物日</h2>
+        <div class="day-date">7月10日（五）</div>
+      </div>
+      <div class="day-tag">展望台 → 唐吉訶德 → 燒肉收尾</div>
+    </div>
+
+    <p class="map-note">📍 玉取崎展望台 → Ishigaki Market → 飯店午休 → 空擋 → Ishigaki beef MARU</p>
+    <a class="map-route-btn" href="https://www.google.com/maps/dir/ANA+InterContinental+Ishigaki+Resort/Tamatorizaki+Observation+Platform/Ishigaki+Market,+Ibaruma/ANA+InterContinental+Ishigaki+Resort/Don+Quijote+Ishigakijima/Ishigaki+beef+MARU" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      在 Google 地圖開啟今日路線
+    </a>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">09:00</div>
+        <div class="tl-card">
+          <div class="tl-title">飯店出發</div>
+          <div class="tl-desc">往東北方向，車程約30-40分鐘。</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">09:40–10:30</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=Tamatorizaki+Observation+Platform%2C+Ishigaki" target="_blank" rel="noopener">
+          <div class="tl-title">玉取崎展望台</div>
+          <div class="tl-desc">可眺望伊原間灣藍色海水與珊瑚礁、Hanna山、平久保半島。</div>
+          <div class="tl-note"><b>選擇考量：</b>原本考慮平久保埼燈塔，但來回車程超過2.5小時太遠。玉取崎是必經之路、步道平緩，穿拖鞋也OK，適合長輩小孩，不用走到最北端也能看到開闊海景。</div>
+        </a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">10:45–12:00</div>
+        <a class="tl-card meal" href="https://www.google.com/maps/search/?api=1&query=Ishigaki+Market%2C+Ibaruma" target="_blank" rel="noopener">
+          <div class="tl-title">🍽️ Ishigaki Market（早午餐）</div>
+          <div class="tl-desc">蒜香鮮蝦飯、舒芙蕾鬆餅評價極高，環境舒適、自然採光。</div>
+          <div class="tl-note"><b>選擇考量：</b>評價4.6全島數一數二，鬆餅現點現做，剛好接續展望台行程，作為北部一帶的補給站。</div>
+        </a>
+      </div>
+
+      <div class="nap-banner">
+        <span class="nap-icon">😴</span>
+        <div><b>午休時段 12:45–15:00</b>　返回飯店休息，小朋友可在車程上補眠。</div>
+      </div>
+
+      <div class="tl-item rest">
+        <div class="tl-time">15:00–18:30</div>
+        <div class="tl-card rest">
+          <div class="tl-title">🕐 空擋時間</div>
+          <div class="tl-desc">依當天狀況彈性安排，可選擇回飯店休息、使用飯店設施，或到附近購物（唐吉訶德距飯店約5分鐘車程）。</div>
+        </div>
+      </div>
+
+      <div class="tl-item highlight">
+        <div class="tl-time">19:00 起</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=Ishigaki+beef+MARU" target="_blank" rel="noopener">
+          <div class="tl-title">🍖 Ishigaki beef MARU（晚餐）</div>
+          <div class="tl-desc">7種牛肉套餐、內臟鮮嫩，少數可刷卡的餐廳之一。</div>
+          <div class="tl-note"><b>選擇考量：</b>評價4.5、有英文菜單，最後一晚以燒肉收尾。<span class="badge warn">⚠️ 建議提前訂位</span>，旺季容易客滿。</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 5 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="day-num">05</div>
+      <div class="day-title-block">
+        <h2>賦歸日</h2>
+        <div class="day-date">7月11日（六）</div>
+      </div>
+      <div class="day-tag">早起・還車・搭機</div>
+    </div>
+
+    <p class="map-note">📍 飯店退房 → 機場還車 → 登機</p>
+    <a class="map-route-btn" href="https://www.google.com/maps/dir/ANA+InterContinental+Ishigaki+Resort/Ishigaki+Airport" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      在 Google 地圖開啟今日路線
+    </a>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">07:00</div>
+        <div class="tl-card">
+          <div class="tl-title">飯店退房</div>
+          <div class="tl-desc">建議前一晚先完成大部分行李整理。</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">07:30–08:00</div>
+        <a class="tl-card" href="https://www.google.com/maps/search/?api=1&query=New+Ishigaki+Airport" target="_blank" rel="noopener">
+          <div class="tl-title">前往機場還車</div>
+          <div class="tl-desc">飯店至機場車程約20-25分鐘。</div>
+          <div class="tl-note"><b>選擇考量：</b>08:00還車截止，提前出發保留緩衝時間，避免塞車或找車位耽誤。</div>
+        </a>
+      </div>
+
+      <div class="tl-item highlight">
+        <div class="tl-time">09:25</div>
+        <div class="tl-card">
+          <div class="tl-title">起飛賦歸</div>
+          <div class="tl-desc">建議起飛前至少90分鐘抵達機場辦理登機與安檢。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="overview-section">
+  <div class="wrap">
+    <h2>五天總覽</h2>
+    <div class="sub">每天固定午休／飯店時光，下午行程刻意放慢</div>
+    <div class="ov-grid">
+      <div class="ov-card">
+        <div class="ov-day">Day 1 · 7/7</div>
+        <ul>
+          <li>Banna Park</li>
+          <li>やえかつ午餐</li>
+          <li>超市・牛乳屋</li>
+          <li>Check-in・飯店設施</li>
+          <li>燒肉樹苑晚餐</li>
+        </ul>
+      </div>
+      <div class="ov-card">
+        <div class="ov-day">Day 2 · 7/8</div>
+        <ul>
+          <li>Sukuji Beach戲水</li>
+          <li>川平灣玻璃船</li>
+          <li>三川食堂午餐</li>
+          <li>公設市場＋Euglena Mall</li>
+          <li>THE NORTH FACE＋Sora購物</li>
+          <li>市區晚餐</li>
+        </ul>
+      </div>
+      <div class="ov-card">
+        <div class="ov-day">Day 3 · 7/9</div>
+        <ul>
+          <li>富崎海灘</li>
+          <li>MiruMiru冰淇淋</li>
+          <li>Kabusa食堂午餐</li>
+          <li>花園烤肉區泳池</li>
+          <li>🎂 花園烤肉區慶生晚餐</li>
+        </ul>
+      </div>
+      <div class="ov-card">
+        <div class="ov-day">Day 4 · 7/10</div>
+        <ul>
+          <li>玉取崎展望台</li>
+          <li>Ishigaki Market</li>
+          <li>空擋（購物或休息）</li>
+          <li>燒肉MARU晚餐</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fname">Ishigaki Island, July 2026</div>
+  <div>六大兩小・海風與慢時光</div>
+</footer>
+
+</body>
+</html>
